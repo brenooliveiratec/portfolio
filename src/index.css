@@ -47,3 +47,7 @@ img {
   display: block;
   max-width: 100%;
 }
+
+html {
+  scroll-padding-top: 96px;
+}

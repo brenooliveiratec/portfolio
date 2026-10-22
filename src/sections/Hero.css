@@ -1,0 +1,35 @@
+.hero {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(80px, 12vw, 160px) 24px;
+}
+
+.hero-eyebrow {
+  margin: 0 0 24px;
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+}
+
+.hero-title {
+  max-width: 1000px;
+  margin: 0;
+  font-size: clamp(2.5rem, 6vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+}
+
+.hero-title span {
+  color: var(--color-accent);
+}
+
+.hero-description {
+  max-width: 600px;
+  margin: 32px 0 0;
+  color: var(--color-muted);
+  font-size: 1.125rem;
+  line-height: 1.8;
+}

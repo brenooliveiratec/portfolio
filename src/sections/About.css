@@ -1,0 +1,46 @@
+.about {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: 64px;
+
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: 80px 24px;
+
+  scroll-margin-top: 96px;
+}
+
+.about-eyebrow {
+  margin: 0 0 16px;
+  color: var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.about-heading h2 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.035em;
+}
+
+.about-content {
+  display: grid;
+  gap: 24px;
+}
+
+.about-content p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .about {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-block: 56px;
+  }
+}
