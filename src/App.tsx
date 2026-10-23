@@ -1,14 +1,19 @@
 import Header from "./components/Header";
+import ConstructionScene from "./components/ConstructionScene";
 import Hero from "./sections/Hero";
 import About from "./sections/About";
 
 function App() {
   return (
-    <main>
+    <>
       <Header />
-      <Hero />
-      <About />
-    </main>
+
+      <main>
+        <Hero />
+        <ConstructionScene />
+        <About />
+      </main>
+    </>
   );
 }
 
