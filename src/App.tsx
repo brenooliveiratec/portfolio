@@ -1,6 +1,7 @@
 import Header from "./components/Header";
-import ConstructionScene from "./components/ConstructionScene";
 import Hero from "./sections/Hero";
+import Technologies from "./sections/Technologies";
+import ConstructionScene from "./components/ConstructionScene";
 import About from "./sections/About";
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 
       <main>
         <Hero />
+        <Technologies />
         <ConstructionScene />
         <About />
       </main>

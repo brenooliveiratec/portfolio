@@ -1,0 +1,300 @@
+.layer-diagram {
+  display: grid;
+  gap: 10px;
+  width: 100%;
+  min-width: 0;
+
+  color: #d9edf7;
+  font-size: 0.75rem;
+  line-height: 1.45;
+}
+
+.layer-diagram * {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.diagram-caption {
+  color: #a8c5d6;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.diagram-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.diagram-technology {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 9px;
+
+  color: #d9edf7;
+  background: rgb(8 13 20 / 18%);
+  border: 1px solid rgb(131 229 241 / 12%);
+  border-radius: 8px;
+
+  font-size: 0.75rem;
+}
+
+/* Front-end: informações dentro de uma pequena interface. */
+
+.diagram-interface {
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+}
+
+.diagram-sidebar {
+  grid-row: span 3;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 12px;
+
+  background: #193747;
+  border-radius: 8px;
+}
+
+.diagram-sidebar .diagram-technologies {
+  flex-direction: column;
+}
+
+.diagram-window-title {
+  padding: 10px 12px;
+  color: #06151c;
+  background: #36bfd2;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.diagram-panel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+
+  background: #204b60;
+  border: 1px solid rgb(131 229 241 / 10%);
+  border-radius: 8px;
+}
+
+.diagram-panel-mark {
+  flex: 0 0 4px;
+  align-self: stretch;
+  min-height: 18px;
+  background: #65d6e6;
+  border-radius: 4px;
+}
+
+/* Back-end: etapas conectadas. */
+
+.diagram-flow,
+.diagram-flow-step {
+  display: grid;
+}
+
+.diagram-node {
+  display: grid;
+  gap: 6px;
+  padding: 10px 12px;
+
+  background: #183747;
+  border: 1px solid #305b6f;
+  border-radius: 8px;
+}
+
+.diagram-node-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #83e5f1;
+  font-weight: 600;
+}
+
+.diagram-dot {
+  flex: 0 0 6px;
+  height: 6px;
+  background: #65d6e6;
+  border-radius: 50%;
+}
+
+.diagram-connector {
+  justify-self: center;
+  color: #65d6e6;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.diagram-node .diagram-detail {
+  color: #c0d0dd;
+}
+
+/* Dados: conteúdo organizado em linhas e colunas. */
+
+.diagram-table {
+  display: grid;
+  overflow: hidden;
+  border: 1px solid #305b6f;
+  border-radius: 8px;
+}
+
+.diagram-row {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  background: #163241;
+}
+
+.diagram-row + .diagram-row {
+  border-top: 1px solid #305b6f;
+}
+
+.diagram-row > span {
+  padding: 8px 10px;
+}
+
+.diagram-row > span + span {
+  border-left: 1px solid #305b6f;
+}
+
+.diagram-table-heading {
+  color: #83e5f1;
+  background: #204b60;
+  font-weight: 600;
+}
+
+.diagram-field {
+  color: #d9edf7;
+  font-weight: 500;
+}
+
+/* Camadas inclinadas: versão compacta do mesmo desenho. */
+
+.construction-layer:not(.is-front) .layer-diagram {
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+  gap: 6px;
+  font-size: 0.6875rem;
+}
+
+.construction-layer:not(.is-front) .diagram-detail {
+  display: none;
+}
+
+.construction-layer:not(.is-front) .diagram-technologies {
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.construction-layer:not(.is-front) .diagram-technology {
+  flex-shrink: 0;
+  padding: 3px 6px;
+  font-size: 0.625rem;
+}
+
+.construction-layer:not(.is-front) .diagram-sidebar {
+  gap: 6px;
+  padding: 8px;
+}
+
+.construction-layer:not(.is-front) .diagram-window-title,
+.construction-layer:not(.is-front) .diagram-panel,
+.construction-layer:not(.is-front) .diagram-node {
+  padding: 6px 8px;
+}
+
+.construction-layer:not(.is-front) .diagram-row > span {
+  padding: 5px 7px;
+}
+
+/* Camada aberta: espaço para ler o conteúdo. */
+
+.construction-layer.is-front .layer-diagram {
+  gap: 12px;
+  margin-top: 8px;
+  font-size: 0.9375rem;
+}
+
+.construction-layer.is-front .diagram-technology {
+  font-size: 0.8125rem;
+}
+
+.construction-layer.is-front .diagram-caption {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .construction-layer.is-front .layer-diagram {
+    gap: 8px;
+    font-size: 0.8125rem;
+  }
+
+  .construction-layer.is-front .diagram-technology {
+    padding: 4px 6px;
+    font-size: 0.75rem;
+  }
+
+  .diagram-sidebar,
+  .diagram-window-title,
+  .diagram-panel,
+  .diagram-node {
+    padding: 8px;
+  }
+}
+
+.diagram-logo {
+  display: grid;
+  place-items: center;
+  flex: 0 0 30px;
+
+  width: 30px;
+  height: 30px;
+  background: transparent;
+}
+
+.diagram-logo img,
+.diagram-logo svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.diagram-logo svg {
+  color: #65d6e6;
+}
+
+.diagram-technology-name {
+  min-width: 0;
+  line-height: 1.4;
+}
+
+/* Logos menores enquanto a camada estiver inclinada. */
+
+.construction-layer:not(.is-front) .diagram-technology {
+  gap: 5px;
+}
+
+.construction-layer:not(.is-front) .diagram-logo {
+  flex-basis: 22px;
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+}
+
+.construction-layer:not(.is-front) .diagram-logo img,
+.construction-layer:not(.is-front) .diagram-logo svg {
+  width: 16px;
+  height: 16px;
+}
+
+.diagram-logo img[src$="/prisma.svg"],
+.diagram-logo img[src$="/reactrouter.svg"] {
+  filter: brightness(0) invert(1);
+}

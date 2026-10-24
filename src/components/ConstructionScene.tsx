@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSceneMotion } from "../hooks/useSceneMotion";
 import { learningContent } from "../data/learning";
 import type { LayerId, ProjectId } from "../data/learning";
+import LayerDiagram from "./LayerDiagram";
 import "./ConstructionScene.css";
 
 const layers: { id: LayerId; label: string }[] = [
@@ -231,7 +232,6 @@ export default function ConstructionScene() {
           >
             <div className="construction-deck">
               {layers.map((layer, index) => {
-                const entry = learningContent[project][layer.id];
                 const isFront = focusedLayer === layer.id;
 
                 return (
@@ -268,63 +268,7 @@ export default function ConstructionScene() {
                       </span>
                     </span>
 
-                    {isFront ? (
-                      <span className="layer-information">
-                        <span className="layer-stack">
-                          {entry.technologies.map((technology) => (
-                            <span key={technology}>{technology}</span>
-                          ))}
-                        </span>
-
-                        <span className="layer-information-label">
-                          Neste projeto
-                        </span>
-
-                        <span className="layer-summary">
-                          {entry.application}
-                        </span>
-                      </span>
-                    ) : (
-                      <>
-                        {layer.id === "interface" && (
-                          <span
-                            className="layer-interface-art"
-                            aria-hidden="true"
-                          >
-                            <i />
-                            <i />
-                            <i />
-                            <i />
-                          </span>
-                        )}
-
-                        {layer.id === "api" && (
-                          <span className="layer-api-art" aria-hidden="true">
-                            <span>
-                              <b>request</b> → regras
-                            </span>
-                            <span>
-                              <b>service</b> → integração
-                            </span>
-                            <span>
-                              <b>response</b> → resultado
-                            </span>
-                          </span>
-                        )}
-
-                        {layer.id === "data" && (
-                          <span className="layer-data-art" aria-hidden="true">
-                            <i />
-                            <i />
-                            <i />
-                          </span>
-                        )}
-
-                        <span className="layer-technologies">
-                          {entry.technologies.join(" · ")}
-                        </span>
-                      </>
-                    )}
+                    <LayerDiagram project={project} layer={layer.id} />
                   </button>
                 );
               })}

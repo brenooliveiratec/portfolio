@@ -1,15 +1,43 @@
-import { useHeroProgress } from "../hooks/useHeroProgress";
+import type { PointerEvent } from "react";
 import "./Hero.css";
 
 export default function Hero() {
-  const heroRef = useHeroProgress();
+  function handleHeroPointerMove(event: PointerEvent<HTMLElement>) {
+    const reducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)",
+    ).matches;
+
+    if (event.pointerType !== "mouse" || reducedMotion) return;
+
+    const bounds = event.currentTarget.getBoundingClientRect();
+
+    const x = (event.clientX - bounds.left) / bounds.width;
+    const y = (event.clientY - bounds.top) / bounds.height;
+
+    event.currentTarget.style.setProperty(
+      "--hero-light-x",
+      `${(x - 0.5) * 240}px`,
+    );
+
+    event.currentTarget.style.setProperty(
+      "--hero-light-y",
+      `${(y - 0.5) * 120}px`,
+    );
+  }
+
+  function resetHeroLight(event: PointerEvent<HTMLElement>) {
+    event.currentTarget.style.setProperty("--hero-light-x", "0px");
+    event.currentTarget.style.setProperty("--hero-light-y", "0px");
+  }
 
   return (
     <section
-      ref={heroRef}
       id="inicio"
       className="hero"
       aria-labelledby="hero-title"
+      onPointerMove={handleHeroPointerMove}
+      onPointerLeave={resetHeroLight}
+      onPointerCancel={resetHeroLight}
     >
       <div className="hero-content">
         <p className="hero-eyebrow">Desenvolvedor Back-end em formação</p>
@@ -22,41 +50,26 @@ export default function Hero() {
 
         <div className="hero-introduction">
           <p className="hero-lead">
-            Estou construindo minha carreira em desenvolvimento, uma experiência
-            de cada vez.
+            Tenho curiosidade pelo que acontece por trás de cada aplicação. É
+            nessa parte que quero construir minha carreira
           </p>
 
           <div className="hero-description">
             <p>
-              Meu caminho começou com o DOMU e ganhou novos desafios com o
-              Sistema Bar. Construindo esses projetos, passei a entender melhor
-              APIs, integrações e bancos de dados.
+              Sou Breno, desenvolvedor back-end em formação, com interesse em
+              APIs, bancos de dados e integrações. Nos projetos que desenvolvo,
+              busco entender como cada parte se conecta, da interface às regras
+              que fazem o sistema funcionar.
             </p>
 
             <p>
-              Aprendo melhor quando posso experimentar, investigar um problema e
-              acompanhar a solução funcionando. Quero continuar evoluindo,
-              aprender com outras pessoas e contribuir em projetos reais.
+              Aprendo melhor colocando a mão na massa: investigando problemas,
+              testando possibilidades e acompanhando o resultado. Quero
+              aprofundar meus conhecimentos, trocar experiências e contribuir
+              com o desenvolvimento de soluções úteis.
             </p>
           </div>
         </div>
-      </div>
-
-      <a className="hero-explore" href="#construcao">
-        <span className="hero-explore-copy">
-          <span className="hero-explore-label">Conheça meu trabalho</span>
-          <span className="hero-explore-detail">
-            Domu, Sistema Bar e o que aprendi construindo.
-          </span>
-        </span>
-
-        <span className="hero-arrow" aria-hidden="true">
-          ↓
-        </span>
-      </a>
-
-      <div className="hero-progress" aria-hidden="true">
-        <span className="hero-progress-fill" />
       </div>
     </section>
   );
