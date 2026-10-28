@@ -1,8 +1,10 @@
 import Header from "./components/Header";
 import Hero from "./sections/Hero";
-import Technologies from "./sections/Technologies";
-import ConstructionScene from "./components/ConstructionScene";
 import About from "./sections/About";
+import Technologies from "./sections/Technologies";
+import Certifications from "./sections/Certifications";
+import Contact from "./sections/Contact";
+import ConstructionScene from "./components/ConstructionScene";
 
 function App() {
   return (
@@ -11,9 +13,11 @@ function App() {
 
       <main>
         <Hero />
+        <About />
         <Technologies />
         <ConstructionScene />
-        <About />
+        <Certifications />
+        <Contact />
       </main>
     </>
   );

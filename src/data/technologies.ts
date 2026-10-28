@@ -35,6 +35,11 @@ export const technologyGroups: TechnologyGroup[] = [
     title: "Back-end e integrações",
     items: [
       {
+        name: "Java",
+        description:
+          "Foco dos meus estudos na faculdade e da carreira que quero construir em back-end. Estou desenvolvendo minha base na linguagem e aprofundando esse conhecimento na prática.",
+      },
+      {
         name: "Node.js",
         description:
           "Desenvolvimento do lado do servidor e das integrações utilizadas nos meus projetos.",

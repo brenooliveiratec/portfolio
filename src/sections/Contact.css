@@ -1,0 +1,231 @@
+.contact {
+  position: relative;
+  width: min(100%, 1200px);
+  margin-inline: auto;
+  padding: 96px 24px 32px;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 72px;
+}
+
+.contact-heading,
+.contact-links {
+  min-width: 0;
+}
+
+.contact-eyebrow {
+  margin: 0 0 16px;
+  color: var(--color-accent);
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.contact-heading h2 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+}
+
+.contact-heading h2 span {
+  color: var(--color-accent);
+}
+
+.contact-description {
+  margin: 24px 0 0;
+  color: var(--color-muted);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+.contact-location {
+  margin: 24px 0 0;
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.contact-links {
+  display: grid;
+  gap: 20px;
+}
+
+.contact-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+
+  padding: 28px;
+  color: var(--color-text);
+  text-decoration: none;
+
+  background:
+    radial-gradient(
+      ellipse at top right,
+      rgb(34 184 207 / 7%),
+      transparent 75%
+    ),
+    var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgb(34 184 207 / 60%);
+  box-shadow: 0 12px 36px rgb(34 184 207 / 8%);
+}
+
+.contact-card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 5px;
+}
+
+.contact-card-icon {
+  display: grid;
+  place-items: center;
+
+  width: 52px;
+  height: 52px;
+
+  color: var(--color-accent);
+  background: rgb(34 184 207 / 8%);
+  border: 1px solid rgb(34 184 207 / 20%);
+  border-radius: 14px;
+}
+
+.contact-card-copy {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.contact-card-label {
+  color: var(--color-accent);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.contact-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.contact-card-detail {
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.contact-card-arrow {
+  color: var(--color-muted);
+  transition:
+    transform 220ms ease,
+    color 220ms ease;
+}
+
+.contact-card:hover .contact-card-arrow,
+.contact-card:focus-visible .contact-card-arrow {
+  color: var(--color-accent);
+  transform: translate(3px, -3px);
+}
+
+.contact-closing {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--color-border);
+
+  color: var(--color-muted);
+  font-size: 0.875rem;
+}
+
+.contact-closing a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 44px;
+  text-decoration: none;
+}
+
+.contact-closing a:hover {
+  color: var(--color-accent);
+}
+
+.contact-closing a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+@media (max-width: 900px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .contact-heading {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding-top: 56px;
+  }
+
+  .contact-card {
+    gap: 14px;
+    padding: 20px 16px;
+  }
+
+  .contact-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .contact-card-title {
+    font-size: 1.0625rem;
+  }
+
+  .contact-closing {
+    margin-top: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-card,
+  .contact-card-arrow {
+    transition: none;
+  }
+
+  .contact-card:hover,
+  .contact-card:focus-visible,
+  .contact-card:hover .contact-card-arrow,
+  .contact-card:focus-visible .contact-card-arrow {
+    transform: none;
+  }
+}

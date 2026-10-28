@@ -8,6 +8,7 @@ type TechnologyIconProps = {
 const technologyLogos: Record<string, string | undefined> = {
   React: "/images/technologies/react.svg",
   TypeScript: "/images/technologies/typescript.svg",
+  Java: "/images/technologies/java.svg",
   "Node.js": "/images/technologies/nodejs.svg",
   "React Router": "/images/technologies/reactrouter.svg",
   Supabase: "/images/technologies/supabase.svg",
