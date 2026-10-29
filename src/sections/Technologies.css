@@ -178,29 +178,6 @@
   line-height: 1.7;
 }
 
-.technologies-projects-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 14px;
-
-  min-height: 44px;
-  margin-top: 28px;
-  color: var(--color-accent);
-  text-decoration: none;
-  line-height: 1.5;
-}
-
-.technologies-projects-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 5px;
-}
-
-.technologies-projects-link:focus-visible {
-  outline: 2px solid var(--color-accent);
-  outline-offset: 6px;
-  border-radius: 4px;
-}
-
 @media (hover: hover) and (pointer: fine) {
   .technology-item:hover {
     transform: translateY(-3px);

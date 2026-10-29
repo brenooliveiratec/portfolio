@@ -17,7 +17,7 @@ export default function Certifications() {
           Conhecimento em <span>construção.</span>
         </h2>
 
-        <p className="certificacoes-introduction">
+        <p className="certifications-introduction">
           Cursos e estudos que complementam minha graduação e meu
           desenvolvimento em back-end.
         </p>

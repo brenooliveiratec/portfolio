@@ -248,12 +248,6 @@
   border-radius: 12px;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .about-entry-marker {
-    transition: none;
-  }
-}
-
 @keyframes about-content-enter {
   from {
     opacity: 0;
@@ -306,6 +300,10 @@
 @media (prefers-reduced-motion: reduce) {
   .about-topic,
   .about-indicator {
+    transition: none;
+  }
+
+  .about-entry-marker {
     transition: none;
   }
 

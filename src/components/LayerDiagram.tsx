@@ -3,16 +3,6 @@ import type { LayerId, ProjectId } from "../data/learning";
 import TechnologyIcon from "./TechnologyIcon";
 import "./LayerDiagram.css";
 
-const technologyLogos: Record<string, string | undefined> = {
-  React: "/images/technologies/react.svg",
-  TypeScript: "/images/technologies/typescript.svg",
-  "Node.js": "/images/technologies/nodejs.svg",
-  "React Router": "/images/technologies/reactrouter.svg",
-  Supabase: "/images/technologies/supabase.svg",
-  PostgreSQL: "/images/technologies/postgresql.svg",
-  Prisma: "/images/technologies/prisma.svg",
-};
-
 type LayerDiagramProps = {
   project: ProjectId;
   layer: LayerId;

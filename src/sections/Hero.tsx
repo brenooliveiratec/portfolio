@@ -1,4 +1,6 @@
 import type { PointerEvent } from "react";
+import { Download, Mail } from "lucide-react";
+import LinkedInIcon from "../components/LinkedInIcon";
 import "./Hero.css";
 
 export default function Hero() {
@@ -50,26 +52,57 @@ export default function Hero() {
 
         <div className="hero-introduction">
           <p className="hero-lead">
-            Tenho curiosidade pelo que acontece por trás de cada aplicação. É
-            nessa parte que quero construir minha carreira
+            Meu foco está no back-end: entender, conectar e construir o que faz
+            uma aplicação funcionar.
           </p>
 
           <div className="hero-description">
             <p>
-              Sou Breno, desenvolvedor back-end em formação, com interesse em
-              APIs, bancos de dados e integrações. Nos projetos que desenvolvo,
-              busco entender como cada parte se conecta, da interface às regras
-              que fazem o sistema funcionar.
-            </p>
-
-            <p>
-              Aprendo melhor colocando a mão na massa: investigando problemas,
-              testando possibilidades e acompanhando o resultado. Quero
-              aprofundar meus conhecimentos, trocar experiências e contribuir
-              com o desenvolvimento de soluções úteis.
+              Estudo Análise e Desenvolvimento de Sistemas, com foco em Java.
+              Nos meus projetos, também trabalho com Node.js, APIs e bancos de
+              dados, transformando estudo em experiência prática.
             </p>
           </div>
         </div>
+
+        <div className="hero-actions">
+          <a
+            className="hero-action hero-action--secondary hero-action--icon"
+            href="mailto:brenooliveiraec@gmail.com"
+            aria-label="Enviar e-mail para Breno"
+            title="E-mail"
+          >
+            <Mail size={22} aria-hidden="true" />
+          </a>
+
+          <a
+            className="hero-action hero-action--secondary hero-action--icon"
+            href="https://www.linkedin.com/in/breno-oliveira-tec"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Meu LinkedIn (abre em nova aba)"
+            title="LinkedIn"
+          >
+            <LinkedInIcon />
+          </a>
+
+          <a
+            className="hero-action hero-action--primary"
+            href="/documents/curriculo-breno-oliveira.pdf"
+            download="Curriculo_Breno_Oliveira.pdf"
+            aria-label="Baixar currículo de Breno Oliveira em PDF"
+          >
+            <Download size={22} aria-hidden="true" />
+            Currículo
+          </a>
+        </div>
+
+        <a
+          className="hero-action hero-action--primary hero-contact-link"
+          href="#contato"
+        >
+          Vamos conversar
+        </a>
       </div>
     </section>
   );

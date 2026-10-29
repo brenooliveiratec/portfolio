@@ -196,6 +196,7 @@
   flex-shrink: 0;
   padding: 3px 6px;
   font-size: 0.625rem;
+  gap: 5px;
 }
 
 .construction-layer:not(.is-front) .diagram-sidebar {
@@ -276,10 +277,6 @@
 }
 
 /* Logos menores enquanto a camada estiver inclinada. */
-
-.construction-layer:not(.is-front) .diagram-technology {
-  gap: 5px;
-}
 
 .construction-layer:not(.is-front) .diagram-logo {
   flex-basis: 22px;

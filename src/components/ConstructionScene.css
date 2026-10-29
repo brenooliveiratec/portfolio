@@ -85,9 +85,6 @@
 }
 
 .construction-layout {
-  width: min(100%, 1320px);
-  margin-inline: auto;
-
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   align-items: center;
@@ -304,63 +301,6 @@
   text-transform: uppercase;
 }
 
-.layer-technologies {
-  margin-top: auto;
-  color: #a8c5d6;
-  font-size: 0.875rem;
-}
-
-.layer-interface-art {
-  display: grid;
-  grid-template-columns: 48px 1fr 1fr;
-  grid-template-rows: 34px 46px;
-  gap: 10px;
-}
-
-.layer-interface-art i {
-  background: #225268;
-  border-radius: 4px;
-}
-
-.layer-interface-art i:first-child {
-  grid-row: span 2;
-  background: #1d3949;
-}
-
-.layer-interface-art i:nth-child(2) {
-  grid-column: span 2;
-  background: var(--color-accent);
-  opacity: 0.8;
-}
-
-.layer-api-art {
-  display: grid;
-  font-family: ui-monospace, monospace;
-  font-size: 0.875rem;
-  line-height: 2;
-  color: #a8c5d6;
-}
-
-.layer-api-art b {
-  color: #65d6e6;
-  font-weight: 400;
-}
-
-.layer-data-art {
-  display: grid;
-  gap: 10px;
-}
-
-.layer-data-art i {
-  height: 20px;
-  border-radius: 3px;
-  background: repeating-linear-gradient(
-    90deg,
-    #2b5368 0 28%,
-    transparent 28% 33%
-  );
-}
-
 .construction-options {
   position: relative;
   justify-content: center;
@@ -411,41 +351,6 @@
   opacity: 0.22;
 }
 
-.layer-information {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-top: 8px;
-}
-
-.layer-stack {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.layer-stack > span {
-  padding: 5px 10px;
-  color: #65d6e6;
-  background: rgb(34 184 207 / 10%);
-  border-radius: 6px;
-  font-size: 0.875rem;
-  line-height: 1.5;
-}
-
-.layer-information-label {
-  margin-top: 4px;
-  color: var(--color-text);
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.layer-summary {
-  color: #c0d0dd;
-  font-size: 1rem;
-  line-height: 1.7;
-}
-
 .construction-stage.has-front .construction-deck {
   transform: rotateX(calc(var(--rotate-x) * 0.2))
     rotateY(calc(var(--rotate-y) * 0.2));
@@ -492,15 +397,6 @@
   .construction-stage.is-expanded .construction-layer {
     transform: translate(-50%, -50%) translateY(calc(var(--level) * 120px))
       rotateX(42deg) rotateZ(-20deg) scale(0.98);
-  }
-
-  .layer-interface-art {
-    grid-template-columns: 32px 1fr 1fr;
-    grid-template-rows: 28px 36px;
-  }
-
-  .layer-api-art {
-    font-size: 0.75rem;
   }
 }
 

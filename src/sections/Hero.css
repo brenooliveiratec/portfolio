@@ -217,15 +217,108 @@
 
   .hero-explore {
     gap: 16px;
+    justify-self: start;
   }
 
   .hero-navigation {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+}
 
-  .hero-explore {
-    justify-self: start;
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 32px;
+}
+
+.hero-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 46px;
+  padding: 10px 18px;
+
+  border: 1px solid transparent;
+  border-radius: 10px;
+
+  font-size: 0.9375rem;
+  font-weight: 600;
+  line-height: 1.5;
+  text-decoration: none;
+
+  transition:
+    transform 200ms ease,
+    border-color 200ms ease,
+    box-shadow 200ms ease;
+}
+
+.hero-action svg,
+.hero-action img {
+  display: block;
+  flex-shrink: 0;
+}
+
+.hero-action--icon {
+  flex: 0 0 46px;
+  width: 46px;
+  height: 46px;
+  padding: 0;
+}
+
+.hero-action--primary {
+  color: var(--color-background);
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.hero-action--secondary {
+  color: var(--color-text);
+  background: rgb(34 184 207 / 4%);
+  border-color: var(--color-border);
+}
+
+.hero-action:hover:not(:disabled) {
+  transform: translateY(-3px);
+}
+
+.hero-action--primary:hover:not(:disabled) {
+  box-shadow: 0 8px 24px rgb(34 184 207 / 18%);
+}
+
+.hero-action--secondary:hover {
+  border-color: var(--color-accent);
+}
+
+.hero-action:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 5px;
+}
+
+.hero-action:disabled {
+  opacity: 1;
+  cursor: not-allowed;
+}
+
+.hero-contact-link {
+  display: flex;
+  width: fit-content;
+  margin-top: 16px;
+}
+
+/* Mantém a animação do convite abaixo das tecnologias. */
+@keyframes hero-arrow-pulse {
+  0%,
+  100% {
+    scale: 1;
+  }
+
+  50% {
+    scale: 1.1;
   }
 }
 
@@ -241,15 +334,12 @@
     transform: none;
     transition: none;
   }
-}
 
-@keyframes hero-arrow-pulse {
-  0%,
-  100% {
-    scale: 1;
+  .hero-action {
+    transition: none;
   }
 
-  50% {
-    scale: 1.1;
+  .hero-action:hover:not(:disabled) {
+    transform: none;
   }
 }

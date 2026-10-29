@@ -175,10 +175,10 @@ export default function ConstructionScene() {
                     ))}
                   </ul>
 
-                  <h4>Como apliquei</h4>
+                  <h4>Aplicação</h4>
                   <p>{content.application}</p>
 
-                  <h4>O que aprendi</h4>
+                  <h4>Aprendizado</h4>
                   <p>{content.learning}</p>
                 </>
               ) : (
