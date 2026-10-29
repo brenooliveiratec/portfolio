@@ -104,6 +104,16 @@ export default function Hero() {
           Vamos conversar
         </a>
       </div>
+
+      <div className="hero-portrait">
+        <img
+          src="/images/profile/breno.jpeg"
+          alt="Breno Oliveira"
+          width={1179}
+          height={2096}
+          fetchPriority="high"
+        />
+      </div>
     </section>
   );
 }

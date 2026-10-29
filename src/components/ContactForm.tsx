@@ -51,6 +51,7 @@ export default function ContactForm() {
         <div className="contact-field">
           <input
             id="contact-name"
+            aria-label="Seu nome"
             name="name"
             type="text"
             autoComplete="name"
@@ -63,6 +64,7 @@ export default function ContactForm() {
         <div className="contact-field">
           <input
             id="contact-email"
+            aria-label="Seu email"
             name="email"
             type="email"
             autoComplete="email"
@@ -75,6 +77,7 @@ export default function ContactForm() {
         <div className="contact-field contact-field--message">
           <textarea
             id="contact-message"
+            aria-label="Sua mensagem"
             name="message"
             placeholder="Sua mensagem"
             rows={6}
