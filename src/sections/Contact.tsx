@@ -7,7 +7,7 @@ const contacts = [
   {
     id: "email",
     label: "E-mail",
-    title: "Vamos conversar",
+    title: "Envie um email diretamente",
     detail: "brenooliveiraec@gmail.com",
     href: "mailto:brenooliveiraec@gmail.com",
     icon: Mail,
@@ -16,7 +16,7 @@ const contacts = [
   {
     id: "linkedin",
     label: "LinkedIn",
-    title: "Conheça meu perfil",
+    title: "Conectar-se profissionalmente",
     detail: "Breno Oliveira",
     href: "https://www.linkedin.com/in/breno-oliveira-tec",
     icon: LinkedInIcon,
@@ -25,7 +25,7 @@ const contacts = [
   {
     id: "whatsapp",
     label: "WhatsApp",
-    title: "Fale comigo diretamente",
+    title: "Mande uma mensagem direta",
     detail: "(85) 98946-1672",
     href: "https://wa.me/5585989461672",
     icon: MessageCircle,
@@ -73,9 +73,9 @@ export default function Contact() {
                 </span>
 
                 <span className="contact-card-copy">
-                  <span className="contact-card-label">{contact.label}</span>
+                  <span className="contact-card-title">{contact.label}</span>
 
-                  <span className="contact-card-title">{contact.title}</span>
+                  <span className="contact-card-label">{contact.title}</span>
 
                   <span className="contact-card-detail">{contact.detail}</span>
                 </span>
@@ -95,9 +95,13 @@ export default function Contact() {
             </span>
 
             <div className="contact-card-copy">
-              <span className="contact-card-label">Localização</span>
-              <span className="contact-card-title">Fortaleza, Ceará</span>
-              <span className="contact-card-detail">Brasil</span>
+              <span className="contact-card-title">Localização</span>
+              <span className="contact-card-label">
+                Disponível para trabalho remoto
+              </span>
+              <span className="contact-card-detail">
+                Fortaleza, Ceará - Brasil
+              </span>
             </div>
           </div>
         </div>
